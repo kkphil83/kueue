@@ -1,4 +1,4 @@
-apiVersion: kueue.x-k8s.io/v1beta1
+apiVersion: kueue.x-k8s.io/v1beta2
 kind: ClusterQueue
 metadata:
   name: "shared-cq"
@@ -10,11 +10,9 @@ spec:
       maxPriorityThreshold: 100
     withinClusterQueue: Never
   namespaceSelector: {} # match all.
-  cohort: "team-ab"
+  cohortName: "team-ab"
   resourceGroups:
-  - coveredResources: 
-    - cpu
-    - memory
+  - coveredResources: ["cpu", "memory"]
     flavors:
     - name: "default-flavor"
       resources:

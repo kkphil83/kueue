@@ -3,5 +3,6 @@ kind: Namespace
 metadata:  
   labels:
     kubernetes.io/metadata.name: team-b
+    kueue.openshift.io/managed: 'true'
     opendatahub.io/dashboard: "true"
   name: team-b
